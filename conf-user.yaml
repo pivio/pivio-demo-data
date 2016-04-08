@@ -1,0 +1,37 @@
+data_format_version: 0.6
+# --- MUST HAVE
+id: user
+name: Conference User Service
+type: Service
+owner: Team User
+description: The central user access.
+short_name: CNF-USR
+# --- MUST HAVE END
+contact: Stephan Paul
+tags:
+links:
+  homepage: http://wiki.local/user
+  buildchain: http://ci.local/user
+#-------------------------------------------------------------------------------
+service:
+  provides:
+    - description: Access to all user information
+      service_name: user-service
+      protocol: https
+      port: 9443
+      transport_protocol: tcp
+  depends_on:
+    internal:
+     - user-db
+#-------------------------------------------------------------------------------
+context:
+  belongs_to_bounded_context: User
+  visibility: public
+#-------------------------------------------------------------------------------
+runtime:
+  cpu: L
+  ram: L
+  disk: L
+  host_type: VM
+  network_zone: Core
+#-------------------------------------------------------------------------------

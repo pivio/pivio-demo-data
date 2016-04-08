@@ -1,0 +1,44 @@
+data_format_version: 0.6
+# --- MUST HAVE
+id:
+name:
+type: Service
+owner:
+description:
+short_name:
+# --- MUST HAVE END
+contact:
+tags:
+links:
+  homepage:
+  buildchain:
+#-------------------------------------------------------------------------------
+service:
+  provides:
+    - description:
+      service_name:
+      protocol: https
+      port: 9443
+      transport_protocol: tcp
+      public_dns:
+       -
+  depends_on:
+    internal:
+     -
+    external:
+     - target:
+       transport_protocol:
+       via:
+       why:
+#-------------------------------------------------------------------------------
+context:
+  belongs_to_bounded_context:
+  visibility: private
+#-------------------------------------------------------------------------------
+runtime:
+  cpu:
+  ram:
+  disk:
+  host_type: Docker
+  network_zone: Core
+#-------------------------------------------------------------------------------

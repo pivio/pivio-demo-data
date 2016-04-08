@@ -1,0 +1,45 @@
+data_format_version: 0.6
+# --- MUST HAVE
+id: cfp-submission
+name: CfP Submission Service.
+type: Service
+owner: Team Submission
+description: Collects all submission by the users.
+short_name: cfp-submission
+# --- MUST HAVE END
+contact: John Walker
+tags:
+links:
+  homepage: http://wiki.local/submission
+  buildchain: http://ci.local/submission
+#-------------------------------------------------------------------------------
+service:
+  provides:
+    - description: A User can submit a CfP
+      service_name: submission-service
+      protocol: https
+      port: 443
+      transport_protocol: tcp
+        public_dns:
+         - submission.superconf.io
+    - description: REST interface to the cfp submission
+      service_name: rest-submission-service
+      protocol: https
+      port: 9443
+      transport_protocol: tcp
+  depends_on:
+    internal:
+     - submission-db
+     - rest-conference-service
+#-------------------------------------------------------------------------------
+context:
+  belongs_to_bounded_context: submission
+  visibility: public
+#-------------------------------------------------------------------------------
+runtime:
+  cpu: L
+  ram: L
+  disk: L
+  host_type: VM
+  network_zone: DMZ
+#-------------------------------------------------------------------------------

@@ -1,0 +1,39 @@
+data_format_version: 0.6
+# --- MUST HAVE
+id: login
+name: Conference Login
+type: Service
+owner: Team User
+description: The Login for all conference needs.
+short_name: CNF-LGN
+# --- MUST HAVE END
+contact: Stephan Paul
+tags:
+links:
+  homepage: http://wiki.local/login
+  buildchain: http://ci.local/login
+#-------------------------------------------------------------------------------
+service:
+  provides:
+    - description: Logs in a user
+      service_name: login-service
+      protocol: https
+      port: 443
+      transport_protocol: tcp
+      public_dns:
+       - login.superconf.io
+  depends_on:
+    internal:
+     - user-service
+#-------------------------------------------------------------------------------
+context:
+  belongs_to_bounded_context: Login
+  visibility: public
+#-------------------------------------------------------------------------------
+runtime:
+  cpu: S
+  ram: S
+  disk: S
+  host_type: Docker
+  network_zone: DMZ
+#-------------------------------------------------------------------------------
