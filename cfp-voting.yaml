@@ -20,8 +20,8 @@ service:
       protocol: https
       port: 443
       transport_protocol: tcp
-        public_dns:
-         - voting.superconf.io
+      public_dns:
+       - voting.superconf.io
   depends_on:
     internal:
      - rest-submission-service
