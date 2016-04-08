@@ -26,10 +26,8 @@ service:
     - description: REST API for updating CfP data
       service_name: rest-announcement-service
       protocol: https
-      port: 80
+      port: 9443
       transport_protocol: tcp
-      public_dns:
-       - cfp.superconf.io
   depends_on:
     internal:
      - user-service

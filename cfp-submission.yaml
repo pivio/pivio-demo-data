@@ -20,8 +20,8 @@ service:
       protocol: https
       port: 443
       transport_protocol: tcp
-        public_dns:
-         - submission.superconf.io
+      public_dns:
+        - submission.superconf.io
     - description: REST interface to the cfp submission
       service_name: rest-submission-service
       protocol: https
