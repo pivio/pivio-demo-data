@@ -30,8 +30,8 @@ service:
       transport_protocol: tcp
   depends_on:
     internal:
-     - user-service
-     - email-announcement-service
+     - service_name: user-service
+     - service_name: email-announcement-service
 #-------------------------------------------------------------------------------
 context:
   belongs_to_bounded_context: Announcement

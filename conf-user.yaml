@@ -22,7 +22,7 @@ service:
       transport_protocol: tcp
   depends_on:
     internal:
-     - user-db
+     - service_name: user-db
 #-------------------------------------------------------------------------------
 context:
   belongs_to_bounded_context: User

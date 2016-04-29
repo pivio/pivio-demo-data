@@ -24,7 +24,7 @@ service:
        - login.superconf.io
   depends_on:
     internal:
-     - user-service
+     - service_name: user-service
 #-------------------------------------------------------------------------------
 context:
   belongs_to_bounded_context: Login

@@ -29,8 +29,8 @@ service:
       transport_protocol: tcp
   depends_on:
     internal:
-     - conference-db
-     - rest-announcement-service
+     - service_name: conference-db
+     - service_name: rest-announcement-service
 #-------------------------------------------------------------------------------
 context:
   belongs_to_bounded_context: Conference

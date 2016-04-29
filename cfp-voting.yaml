@@ -24,10 +24,10 @@ service:
        - voting.superconf.io
   depends_on:
     internal:
-     - rest-submission-service
-     - voting-db
-     - program-generation-service
-     - rest-conference-service
+     - service_name: rest-submission-service
+     - service_name: voting-db
+     - service_name: program-generation-service
+     - service_name: rest-conference-service
 #-------------------------------------------------------------------------------
 context:
   belongs_to_bounded_context: Voting

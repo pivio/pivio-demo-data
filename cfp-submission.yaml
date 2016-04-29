@@ -29,8 +29,8 @@ service:
       transport_protocol: tcp
   depends_on:
     internal:
-     - submission-db
-     - rest-conference-service
+     - service_name: submission-db
+     - service_name: rest-conference-service
 #-------------------------------------------------------------------------------
 context:
   belongs_to_bounded_context: submission

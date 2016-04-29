@@ -29,10 +29,10 @@ service:
        - program.superconf.io
   depends_on:
     internal:
-     - program-db
-     - location-service
-     - location-booking-service
-     - conference-service
+     - service_name: program-db
+     - service_name: location-service
+     - service_name: location-booking-service
+     - service_name: conference-service
     external:
      - target: https://booking.superlocations.me:443
        transport_protocol: tcp

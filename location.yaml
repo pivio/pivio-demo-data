@@ -22,8 +22,8 @@ service:
       transport_protocol: tcp
   depends_on:
     internal:
-     - location-db
-     - rest-conference-service
+     - service_name: location-db
+     - service_name: rest-conference-service
     external:
      - target: https://superlocations.me:443
        transport_protocol: tcp
