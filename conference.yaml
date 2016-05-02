@@ -30,7 +30,9 @@ service:
   depends_on:
     internal:
      - service_name: conference-db
+       why: This is my database.
      - service_name: rest-announcement-service
+       why: Need to announce conferences.
 #-------------------------------------------------------------------------------
 context:
   belongs_to_bounded_context: Conference

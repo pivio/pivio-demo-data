@@ -25,6 +25,7 @@ service:
   depends_on:
     internal:
      - service_name: user-service
+       why: need to figure out if this is a valid user.
 #-------------------------------------------------------------------------------
 context:
   belongs_to_bounded_context: Login

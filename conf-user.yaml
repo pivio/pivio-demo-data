@@ -23,6 +23,7 @@ service:
   depends_on:
     internal:
      - service_name: user-db
+       why: Need to talk to my database.
 #-------------------------------------------------------------------------------
 context:
   belongs_to_bounded_context: User

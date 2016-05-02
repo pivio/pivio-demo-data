@@ -26,7 +26,7 @@ service:
     - description: REST API for updating CfP data
       service_name: rest-announcement-service
       protocol: https
-      port: 9443
+      port: 9449
       transport_protocol: tcp
   depends_on:
     internal:
@@ -38,7 +38,7 @@ context:
   visibility: public
 #-------------------------------------------------------------------------------
 runtime:
-  cpu: S
+  cpu: XL
   ram: S
   disk: S
   host_type: Docker
