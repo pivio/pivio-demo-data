@@ -1,0 +1,34 @@
+data_format_version: 0.6
+# --- MUST HAVE
+id: userdb
+name: Conference User Database
+type: Service
+owner: Team User
+description: MySQL of all user data
+short_name: CNF-USR-DB
+# --- MUST HAVE END
+contact: Stephan Paul
+tags:
+links:
+  homepage: http://wiki.local/userdb
+  buildchain: http://ci.local/userdb
+#-------------------------------------------------------------------------------
+service:
+  provides:
+    - description: SSL Access to the user db
+      service_name: user-db
+      protocol: mysql
+      port: 3307
+      transport_protocol: tcp
+#-------------------------------------------------------------------------------
+context:
+  belongs_to_bounded_context: User
+  visibility: private
+#-------------------------------------------------------------------------------
+runtime:
+  cpu: M
+  ram: M
+  disk: M
+  host_type: Metal
+  network_zone: Core
+#-------------------------------------------------------------------------------

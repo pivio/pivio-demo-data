@@ -1,0 +1,34 @@
+data_format_version: 0.6
+# --- MUST HAVE
+id: votingdb
+name: Voting DB
+type: Service
+owner: Team Voting
+description: MySQL of all Submission Voting data
+short_name: CNF-VTNG-DB
+# --- MUST HAVE END
+contact: James Blue
+tags:
+links:
+  homepage: http://wiki.local/votingdb
+  buildchain: http://ci.local/votingdb
+#-------------------------------------------------------------------------------
+service:
+  provides:
+    - description: SSL Access to the voting db
+      service_name: voting-db
+      protocol: mysql
+      port: 3307
+      transport_protocol: tcp
+#-------------------------------------------------------------------------------
+context:
+  belongs_to_bounded_context: Voting
+  visibility: private
+#-------------------------------------------------------------------------------
+runtime:
+  cpu: M
+  ram: M
+  disk: M
+  host_type: Metal
+  network_zone: Core
+#-------------------------------------------------------------------------------

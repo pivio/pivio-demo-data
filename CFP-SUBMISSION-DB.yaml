@@ -1,0 +1,34 @@
+data_format_version: 0.6
+# --- MUST HAVE
+id: cfpsubmissiondb
+name: CfP Submission Database
+type: Service
+owner: Team Submission
+description: MySQL of all CfP
+short_name: CFP-SUBMISSION-DB
+# --- MUST HAVE END
+contact: John Walker
+tags:
+links:
+  homepage: http://wiki.local/cfpdb
+  buildchain: http://ci.local/cfpdb
+#-------------------------------------------------------------------------------
+service:
+  provides:
+    - description: SSL Access to the cfp db
+      service_name: submission-db
+      protocol: mysql
+      port: 3307
+      transport_protocol: tcp
+#-------------------------------------------------------------------------------
+context:
+  belongs_to_bounded_context: Submission
+  visibility: private
+#-------------------------------------------------------------------------------
+runtime:
+  cpu: M
+  ram: M
+  disk: M
+  host_type: Metal
+  network_zone: Core
+#-------------------------------------------------------------------------------

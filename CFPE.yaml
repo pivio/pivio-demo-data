@@ -1,0 +1,37 @@
+data_format_version: 0.6
+# --- MUST HAVE
+id: CFPAEMail
+name: CfP Announcement EMail Service
+type: Service
+owner: Team CFP
+description: This Service sends a CfP EMail and Reminder to all interested partners.
+short_name: CFPE
+# --- MUST HAVE END
+contact: Warren Green
+tags:
+  - Announcement
+links:
+  homepage: http://wiki.local/cfpemail
+  buildchain: http://ci.local/cfpemail
+#-------------------------------------------------------------------------------
+service:
+  provides:
+    - description: REST API for EMailing the announcement
+      service_name: email-announcement-service
+      protocol: https
+      port: 9443
+      transport_protocol: tcp
+      public_dns:
+       - mx.superconf.io
+#-------------------------------------------------------------------------------
+context:
+  belongs_to_bounded_context: Announcement
+  visibility: private
+#-------------------------------------------------------------------------------
+runtime:
+  cpu: S
+  ram: S
+  disk: S
+  host_type: Docker
+  network_zone: DMZ
+#-------------------------------------------------------------------------------

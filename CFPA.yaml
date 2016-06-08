@@ -1,0 +1,46 @@
+data_format_version: 0.6
+# --- MUST HAVE
+id: CFPAnnouncement
+name: CfP Announcement Service
+type: Service
+owner: Team CFP
+description: This service announces the Call for Papers on the Web. It also provides a REST API for partners.
+short_name: CFPA
+# --- MUST HAVE END
+contact: Warren Green
+tags:
+  - Announcement
+links:
+  homepage: http://wiki.local/cfpannouncement
+  buildchain: http://ci.local/cfpannouncement
+#-------------------------------------------------------------------------------
+service:
+  provides:
+    - description: Web Display of the Announcement
+      service_name: web-announcement-service
+      protocol: https
+      port: 80
+      transport_protocol: tcp
+      public_dns:
+       - cfp.superconf.io
+    - description: REST API for updating CfP data
+      service_name: rest-announcement-service
+      protocol: https
+      port: 9449
+      transport_protocol: tcp
+  depends_on:
+    internal:
+     - service_name: user-service
+     - service_name: email-announcement-service
+#-------------------------------------------------------------------------------
+context:
+  belongs_to_bounded_context: Announcement
+  visibility: public
+#-------------------------------------------------------------------------------
+runtime:
+  cpu: XL
+  ram: S
+  disk: S
+  host_type: Docker
+  network_zone: DMZ
+#-------------------------------------------------------------------------------

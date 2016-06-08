@@ -1,0 +1,52 @@
+data_format_version: 0.6
+# --- MUST HAVE
+id: prg-gen
+name: Program Generation
+type: Service
+owner: Team Program
+description: Generates the complete program from the data of voting and CfP.
+short_name: CNF-USR
+# --- MUST HAVE END
+contact: James Blue
+tags:
+links:
+  homepage: http://wiki.local/prggen
+  buildchain: http://ci.local/prggen
+#-------------------------------------------------------------------------------
+service:
+  provides:
+    - description: Generates the program of the conference.
+      service_name: program-generation-service
+      protocol: https
+      port: 9443
+      transport_protocol: tcp
+    - description: Shows the conference program
+      service_name: program-service
+      protocol: https
+      port: 443
+      transport_protocol: tcp
+      public_dns:
+       - program.superconf.io
+  depends_on:
+    internal:
+     - service_name: program-db
+     - service_name: location-service
+     - service_name: location-booking-service
+     - service_name: conference-service
+    external:
+     - target: https://booking.superlocations.me:443
+       transport_protocol: tcp
+       why: Book locations for conferences.
+
+#-------------------------------------------------------------------------------
+context:
+  belongs_to_bounded_context: Program
+  visibility: public
+#-------------------------------------------------------------------------------
+runtime:
+  cpu: L
+  ram: L
+  disk: L
+  host_type: VM
+  network_zone: Core
+#-------------------------------------------------------------------------------

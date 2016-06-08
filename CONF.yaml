@@ -1,0 +1,47 @@
+data_format_version: 0.6
+# --- MUST HAVE
+id: rconf
+name: Conference Service
+type: Service
+owner: Team Conference
+description: CRUD a conference.
+short_name: CONF
+# --- MUST HAVE END
+contact: Paula Falk
+tags:
+links:
+  homepage: http://wiki.local/conf
+  buildchain: http://ci.local/conf
+#-------------------------------------------------------------------------------
+service:
+  provides:
+    - description: Create, update a conference
+      service_name: conference-service
+      protocol: https
+      port: 443
+      transport_protocol: tcp
+      public_dns:
+       - conference.superconf.io
+    - description: REST interface for Create, update a conference
+      service_name: rest-conference-service
+      protocol: https
+      port: 9443
+      transport_protocol: tcp
+  depends_on:
+    internal:
+     - service_name: conference-db
+       why: This is my database.
+     - service_name: rest-announcement-service
+       why: Need to announce conferences.
+#-------------------------------------------------------------------------------
+context:
+  belongs_to_bounded_context: Conference
+  visibility: public
+#-------------------------------------------------------------------------------
+runtime:
+  cpu: M
+  ram: M
+  disk: M
+  host_type: Docker
+  network_zone: DMZ
+#-------------------------------------------------------------------------------
