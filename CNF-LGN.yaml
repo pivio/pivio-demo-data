@@ -38,3 +38,9 @@ runtime:
   host_type: Docker
   network_zone: DMZ
 #-------------------------------------------------------------------------------
+software_dependencies:
+  - name: PHP
+    version: 3.0.1
+    licenses:
+      - name: PHP License
+        url: http://php.net/license/3_01.txt
