@@ -8,7 +8,7 @@ description: MySQL of all Submission Voting data
 short_name: CNF-VTNG-DB
 # --- MUST HAVE END
 contact: James Blue
-tags:
+tags: []
 links:
   homepage: http://wiki.local/votingdb
   buildchain: http://ci.local/votingdb

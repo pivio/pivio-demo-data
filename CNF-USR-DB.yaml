@@ -8,7 +8,7 @@ description: MySQL of all user data
 short_name: CNF-USR-DB
 # --- MUST HAVE END
 contact: Stephan Paul
-tags:
+tags: []
 links:
   homepage: http://wiki.local/userdb
   buildchain: http://ci.local/userdb

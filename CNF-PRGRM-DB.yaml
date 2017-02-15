@@ -8,7 +8,7 @@ description: MySQL of all Program data
 short_name: CNF-PRGRM-DB
 # --- MUST HAVE END
 contact: James Blue
-tags:
+tags: []
 links:
   homepage: http://wiki.local/programdb
   buildchain: http://ci.local/programdb

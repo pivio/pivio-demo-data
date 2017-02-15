@@ -8,7 +8,7 @@ description: CRUD a conference.
 short_name: CONF
 # --- MUST HAVE END
 contact: Paula Falk
-tags:
+tags: []
 links:
   homepage: http://wiki.local/conf
   buildchain: http://ci.local/conf

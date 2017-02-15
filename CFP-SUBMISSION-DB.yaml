@@ -8,7 +8,7 @@ description: MySQL of all CfP
 short_name: CFP-SUBMISSION-DB
 # --- MUST HAVE END
 contact: John Walker
-tags:
+tags: []
 links:
   homepage: http://wiki.local/cfpdb
   buildchain: http://ci.local/cfpdb
