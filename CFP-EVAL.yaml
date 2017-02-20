@@ -8,7 +8,7 @@ description: Evaluation and voting system for the submission.
 short_name: CFP-EVAL
 # --- MUST HAVE END
 contact: John Walker
-tags:
+tags: []
 links:
   homepage: http://wiki.local/cfpvoting
   buildchain: http://ci.local/cfpvoting

@@ -8,7 +8,7 @@ description: The Login for all conference needs.
 short_name: CNF-LGN
 # --- MUST HAVE END
 contact: Stephan Paul
-tags:
+tags: []
 links:
   homepage: http://wiki.local/login
   buildchain: http://ci.local/login

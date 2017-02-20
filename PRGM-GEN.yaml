@@ -8,7 +8,7 @@ description: Generates the complete program from the data of voting and CfP.
 short_name: CNF-USR
 # --- MUST HAVE END
 contact: James Blue
-tags:
+tags: []
 links:
   homepage: http://wiki.local/prggen
   buildchain: http://ci.local/prggen

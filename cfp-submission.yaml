@@ -8,7 +8,7 @@ description: Collects all submission by the users.
 short_name: cfp-submission
 # --- MUST HAVE END
 contact: John Walker
-tags:
+tags: []
 links:
   homepage: http://wiki.local/submission
   buildchain: http://ci.local/submission

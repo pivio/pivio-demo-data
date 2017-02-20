@@ -8,7 +8,7 @@ description: Offers the possibility the find a location matching the given param
 short_name: LCTN
 # --- MUST HAVE END
 contact: Patricia May
-tags:
+tags: []
 links:
   homepage: http://wiki.local/location
   buildchain: http://ci.local/location

@@ -8,7 +8,7 @@ description: MySQL of all conference data
 short_name: CNF-DB
 # --- MUST HAVE END
 contact: Stephan Paul
-tags:
+tags: []
 links:
   homepage: http://wiki.local/confdb
   buildchain: http://ci.local/confdb

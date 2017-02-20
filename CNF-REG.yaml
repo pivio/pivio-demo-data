@@ -8,7 +8,7 @@ description: Registers a user.
 short_name: CNF-REG
 # --- MUST HAVE END
 contact: Stephan Paul
-tags:
+tags: []
 links:
   homepage: http://wiki.local/reg
   buildchain: http://ci.local/reg

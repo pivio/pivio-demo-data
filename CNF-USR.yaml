@@ -8,7 +8,7 @@ description: The central user access.
 short_name: CNF-USR
 # --- MUST HAVE END
 contact: Stephan Paul
-tags:
+tags: []
 links:
   homepage: http://wiki.local/user
   buildchain: http://ci.local/user
